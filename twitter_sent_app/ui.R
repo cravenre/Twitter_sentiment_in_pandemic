@@ -9,12 +9,14 @@ shinyUI(
                             fluidRow(
                               column(3),
                               column(9,
-                                     h2("Project info here"))
+                                     h2("Project info here")
+                                     # plotOutput("plots") %>% withSpinner(color="#1C6EA1")
+                                     )
                             )
                           )
                         )),
                
-               tabPanel("Twitter Analysis", icon=icon("book-open"),
+               tabPanel("Twitter Analysis", icon=icon("twitter"),
                         fluidRow(
                             sidebarPanel(
                                 selectizeInput("entity", h3('Select Entity:'), choices = list(
@@ -38,18 +40,18 @@ shinyUI(
                             
                             mainPanel(
                                 h4("Sentiment"),
-                                plotOutput("tweet_sent") %>% withSpinner(color="#1C6EA1")
+                                plotOutput("tweet_sent", width=600) %>% withSpinner(color="#1C6EA1")
                             ),
                         ),
                       fluidRow(
                         sidebarPanel(
-                          "What text was selected perhaps? Or key dates?"
+                          uiOutput("special_dates")
                         ),
                         mainPanel(
                               fluidRow(
                                 column(9,
                                   h4("Tweet Volume"),
-                                  plotOutput("tweet_vol") %>% withSpinner(color="#1C6EA1")
+                                  plotOutput("tweet_vol", width=490) %>% withSpinner(color="#1C6EA1")
                                 )
                               )
                             )
