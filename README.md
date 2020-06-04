@@ -8,17 +8,17 @@ Over 70 million tweets were downloaded spanning from December 1, 2019 to April 3
 
 # Data Used
 
-www.trackmyhashtag.com/data/COVID-19.zip
+www.trackmyhashtag.com/data/COVID-19.zip  
     Smaller set of 60,000+ tweets from December 1, 2019 - January 28, 2020
 
-https://zenodo.org/record/3738018#.XtJGWi2ZPyK
-    Large set of over 150 million tweets
-    January 27, 2020 - April 22, 2020
-    Dedicated collection with larger volume after March 11
-    Updated daily with current tweets
-    Only contains tweet ID, not text or other information
+https://zenodo.org/record/3738018#.XtJGWi2ZPyK  
+    Large set of over 150 million tweets  
+    January 27, 2020 - April 22, 2020  
+    Dedicated collection with larger volume after March 11  
+    Updated daily with current tweets  
+    Only contains tweet ID, not text or other information  
 
-https://www.kaggle.com/smid80/coronavirus-covid19-tweets
-    Three sets of roughly 15 million tweets
-    March 1, 2020 - April 30, 2020
-    Does not contain retweets
+https://www.kaggle.com/smid80/coronavirus-covid19-tweets  
+    Three sets of roughly 15 million tweets  
+    March 1, 2020 - April 30, 2020  
+    Does not contain retweets  
