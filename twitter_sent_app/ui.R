@@ -9,8 +9,39 @@ shinyUI(
                             fluidRow(
                               column(3),
                               column(9,
-                                     h2("Project info here")
-                                     # plotOutput("plots") %>% withSpinner(color="#1C6EA1")
+                                     h2("Changing Public Sentiment During Pandemic"),
+                                     h4("COVID-19 has had a large and inescapable impact on all of our lives, both personally
+                                        and professionally. The result of that upheaval is that many people's viewpoints of
+                                        the world around them has changed during that time. As a healthcare worker, I have
+                                        felt that change directly as I have gone from an unknown career to one that is now
+                                        celebrated. I wanted to study how society's viewpoints have changed to other aspects
+                                        of life around them, and how that viewpoint has changed over time during the COVID-19
+                                        pandemic. Because we are a digital society, and because lockdowns, quaranties, and
+                                        stay-at-home orders have forced us to live remotely, I decided to look at public opinion
+                                        through the lens of social media. I will look at the public sentiment as measured by the
+                                        content of Twitter posts because they are short, quick ways for people to express what
+                                        they are thinking, feeling, and experiencing."),
+                                     br(),
+                                     h2("Methods and Workflow"),
+                                     h4("Over 70 million tweets were downloaded spanning from December 1, 2019 to April 30,
+                                        2020. The tweets were found in 3 separate datasets. One only contained tweet ID rather
+                                        than the full tweet data for privacy reasons. These tweets had to be hydrated using
+                                        twarc with a Twitter API and was done in chunks due to the size of the data files. The
+                                        tweet ID's were chunked in a random order to ensure that each chunk contained a representative
+                                        distribution of tweets across the date range. The tweets were then filtered down to only
+                                        those using English and adding a column for week in addition to the date the tweet was
+                                        created. I then performed an initial entity analysis of the tweet text using spaCy to
+                                        determine which named entities appear most often in the dataset. Based on this analysis,
+                                        I identified 21 entities covering people, locations, organizations, and sports (because
+                                        we can all use a little enjoyment) that encompass many entities that are of high importance
+                                        and named often in the tweet set. The tweets were then grouped into entity datasets based
+                                        upon whether the text contains words associated with the entity. The entity grouped tweets
+                                        were then analyzed using VADER to determine the overall sentiment of each tweet. The tweets
+                                        were finally grouped by week they were created and score distribution was determined."),
+                                     br(),
+                                     h2("Data Used"),
+                                     h4("www.trackmyhashtag.com/data/COVID-19.zip  https://zenodo.org/record/3738018#.XtJGWi2ZPyK  
+                                        https://www.kaggle.com/smid80/coronavirus-covid19-tweets")
                                      )
                             )
                           )

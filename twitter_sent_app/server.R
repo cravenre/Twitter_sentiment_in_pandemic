@@ -28,8 +28,9 @@ shinyServer(
                              geom = "line", color='darkblue', size=1) +
                 scale_fill_distiller(palette=4, direction=1) +
                 labs(fill='Density of Tweets')+
+                ylim(-10, 10) +
                 scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
-                             limits=as.Date(c("2020-01-01 00:00", "2020-05-01 00:00")))+
+                             limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
                 theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
                       axis.text.y=element_text(size=12),
                       axis.title.x=element_text(size=16),
@@ -43,7 +44,7 @@ shinyServer(
                 geom_bar(fill = 'darkgreen') +
                 labs(x='Week (2020)', y='Tweet Volume')+
                 scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
-                             limits=as.Date(c("2020-01-01 00:00", "2020-05-01 00:00")))+
+                             limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
                 theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
                       axis.text.y=element_text(size=12),
                       axis.title.x=element_text(size=16),
