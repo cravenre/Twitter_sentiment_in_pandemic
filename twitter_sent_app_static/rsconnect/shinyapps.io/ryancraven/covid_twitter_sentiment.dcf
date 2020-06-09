@@ -1,0 +1,12 @@
+name: covid_twitter_sentiment
+title: covid_twitter_sentiment
+username:
+account: ryancraven
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2409289
+bundleId: 3245409
+url: https://ryancraven.shinyapps.io/covid_twitter_sentiment/
+when: 1591670056.02877
+asMultiple: FALSE
+asStatic: FALSE
