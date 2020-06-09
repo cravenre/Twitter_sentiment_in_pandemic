@@ -13,52 +13,6 @@ library(png)
 # Change the limit for scientific notation
 options(scipen=999)
 
-#ent_group_list <- c("People", "Geo-political", "Organizations", "Sports")
-
-# trump <- readRDS('data/shiny_data/trump.rds')
-# obama <- readRDS('data/shiny_data/obama.rds')
-# boris <- readRDS('data/shiny_data/boris.rds')
-# pelosi <- readRDS('data/shiny_data/pelosi.rds')
-# fauci <- readRDS('data/shiny_data/fauci.rds')
-# spain <- readRDS('data/shiny_data/spain.rds')
-# nyc <- readRDS('data/shiny_data/nyc.rds')
-# china <- readRDS('data/shiny_data/china.rds')
-# eu <- readRDS('data/shiny_data/eu.rds')
-# italy <- readRDS('data/shiny_data/italy.rds')
-# usa <- readRDS('data/shiny_data/usa.rds')
-# whitehouse <- readRDS('data/shiny_data/whitehouse.rds')
-# cdc <- readRDS('data/shiny_data/cdc.rds')
-# congress <- readRDS('data/shiny_data/congress.rds')
-# nhs <- readRDS('data/shiny_data/nhs.rds')
-# who <- readRDS('data/shiny_data/who.rds')
-# baseball <- readRDS('data/shiny_data/mlb.rds')
-# hockey <- readRDS('data/shiny_data/nhl.rds')
-# basketball <- readRDS('data/shiny_data/nba.rds')
-# soccer <- readRDS('data/shiny_data/fifa.rds')
-# football <- readRDS('data/shiny_data/nfl.rds')
-# 
-# trump_orig <- readRDS('data/shiny_data/trump_orig.rds')
-# obama_orig <- readRDS('data/shiny_data/obama_orig.rds')
-# boris_orig <- readRDS('data/shiny_data/boris_orig.rds')
-# pelosi_orig <- readRDS('data/shiny_data/pelosi_orig.rds')
-# fauci_orig <- readRDS('data/shiny_data/fauci_orig.rds')
-# spain_orig <- readRDS('data/shiny_data/spain_orig.rds')
-# nyc_orig <- readRDS('data/shiny_data/nyc_orig.rds')
-# china_orig <- readRDS('data/shiny_data/china_orig.rds')
-# eu_orig <- readRDS('data/shiny_data/eu_orig.rds')
-# italy_orig <- readRDS('data/shiny_data/italy_orig.rds')
-# usa_orig <- readRDS('data/shiny_data/usa_orig.rds')
-# whitehouse_orig <- readRDS('data/shiny_data/whitehouse_orig.rds')
-# cdc_orig <- readRDS('data/shiny_data/cdc_orig.rds')
-# congress_orig <- readRDS('data/shiny_data/congress_orig.rds')
-# nhs_orig <- readRDS('data/shiny_data/nhs_orig.rds')
-# who_orig <- readRDS('data/shiny_data/who_orig.rds')
-# baseball_orig <- readRDS('data/shiny_data/mlb_orig.rds')
-# hockey_orig <- readRDS('data/shiny_data/nhl_orig.rds')
-# basketball_orig <- readRDS('data/shiny_data/nba_orig.rds')
-# soccer_orig <- readRDS('data/shiny_data/fifa_orig.rds')
-# football_orig <- readRDS('data/shiny_data/nfl_orig.rds')
-
 trump_dates <- c("Jan 21: First confirmed US case",
                  "Jan 31: Trump declares public health emergency",
                  "Feb 6: First report of death in US",
@@ -325,42 +279,3 @@ football_dates <- c("Jan 21: First confirmed US case",
                     "Mar 16: NFL postpones offseason training",
                     "Mar 24: All NFL facilities close",
                     "Apr 23: NFL draft starts remotely")
-
-
-dates <- c("Jan 11: China reports first death",
-           "Jan 14: First case outside of China",
-           "Jan 17: CDC begins airport screening",
-           "Jan 21: First confirmed US case",
-           "Jan 22: Evidence of human-to-human transmission",
-           "Jan 23: Wuhan goes into lockdown",
-           "Jan 30: Public Health Emergency of International Concern declared",
-           "Jan 31: Trump declares public health emergency",
-           "Feb 6: First report of death in US",
-           "Feb 7: Chinese doctor dies",
-           "Feb 21: CDC says pandemic possible",
-           "Feb 23: Italy goes into lockdown",
-           "Feb 26: CDC reports community spread",
-           "Feb 28: CDC acknowledges flaws in test kits",
-           "Mar 6: Trump says anybody can be tested while at CDC",
-           "Mar 11: Trump restricts travel with Europe",
-           "Mar 11: COVID-19 declared a pandemic",
-           "Mar 13: Trump declares national emergency",
-           "Mar 24: Olympics postponed",
-           "Mar 27: Stimulus package signed",
-           "Mar 28: CDC issues travel advisory for NY area",
-           "Mar 29: White House extends social distancing",
-           "Apr 2: Over 1 million global cases",
-           "Apr 3: CDC recommends face masks",
-           "Apr 8: Wuhan lifts lockdown",
-           "Apr 15: Stay-at-home protests start",
-           "Apr 16: White House reopening guidance",
-           "Apr 21: At-home test approved",
-           "Apr 23: Small business funding passed",
-           "Apr 24: GA begins reopening",
-           "Apr 28: 1 million US cases"
-           )
-
-print(obama_dates)
-print(trump_dates)
-
-# trump_orig_sent = readPNG('plots/trump_orgi_sent.png')

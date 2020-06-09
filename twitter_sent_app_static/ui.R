@@ -72,7 +72,6 @@ shinyUI(
                             mainPanel(
                                 h4("Sentiment"),
                                 imageOutput("sentiment")
-                                # imageOutput("tweet_sent", width=600) %>% withSpinner(color="#1C6EA1")
                             )
                         ),
                       fluidRow(
@@ -84,8 +83,6 @@ shinyUI(
                                 column(9,
                                   h4("Tweet Volume"),
                                   imageOutput("volume")
-                                  # imageOutput("volume", width 490)
-                                  # plotOutput("tweet_vol", width=490) %>% withSpinner(color="#1C6EA1")
                                 )
                               )
                             )

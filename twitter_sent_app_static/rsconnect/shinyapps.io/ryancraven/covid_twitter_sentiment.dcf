@@ -5,8 +5,8 @@ account: ryancraven
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 2409289
-bundleId: 3245409
+bundleId: 3245438
 url: https://ryancraven.shinyapps.io/covid_twitter_sentiment/
-when: 1591670056.02877
+when: 1591670712.88835
 asMultiple: FALSE
 asStatic: FALSE
