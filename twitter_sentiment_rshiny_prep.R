@@ -157,3 +157,1222 @@ ggplot(fauci, aes(x = week)) +
   labs(x='Week (2020)', y='Tweet Volume') +
   xlim(2,18)
 
+# Making the individual plots so I don't overwhelm R Shiny memory when I publish
+ggplot(fifa, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=fifa, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/soccer_sent.png')
+
+ggplot(mlb, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=mlb, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/baseball_sent.png')
+
+ggplot(nba, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nba, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/basketball_sent.png')
+
+ggplot(boris, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=boris, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/boris_sent.png')
+
+ggplot(cdc, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=cdc, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/cdc_sent.png')
+
+ggplot(china, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=china, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/china_sent.png')
+
+ggplot(congress, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=congress, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/congress_sent.png')
+
+ggplot(eu, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=eu, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/eu_sent.png')
+
+ggplot(fauci, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=fauci, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/fauci_sent.png')
+
+ggplot(nfl, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nfl, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/football_sent.png')
+
+ggplot(nhl, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nhl, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/hockey_sent.png')
+
+ggplot(italy, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=italy, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/italy_sent.png')
+
+ggplot(nhs, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nhs, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/nhs_sent.png')
+
+ggplot(nyc, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nyc, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/nyc_sent.png')
+
+ggplot(obama, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=obama, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/obama_sent.png')
+
+ggplot(pelosi, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=pelosi, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/pelosi_sent.png')
+
+ggplot(spain, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=spain, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/spain_sent.png')
+
+ggplot(trump, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=trump, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/trump_sent.png')
+
+ggplot(usa, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=usa, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/usa_sent.png')
+
+ggplot(whitehouse, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=whitehouse, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/whitehouse_sent.png')
+
+ggplot(who, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=who, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/who_sent.png')
+
+ggplot(mlb, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/baseball_vol.png')
+
+ggplot(nba, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/basketball_vol.png')
+
+ggplot(boris, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/boris_vol.png')
+
+ggplot(cdc, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/cdc_vol.png')
+
+ggplot(china, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/china_vol.png')
+
+ggplot(congress, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/congress_vol.png')
+
+ggplot(eu, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/eu_vol.png')
+
+ggplot(fauci, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/fauci_vol.png')
+
+ggplot(nfl, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/football_vol.png')
+
+ggplot(nhl, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/hockey_vol.png')
+
+ggplot(italy, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/italy_vol.png')
+
+ggplot(nhs, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/nhs_vol.png')
+
+ggplot(nyc, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/nyc_vol.png')
+
+ggplot(obama, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/obama_vol.png')
+
+ggplot(pelosi, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/pelosi_vol.png')
+
+ggplot(fifa, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/soccer_vol.png')
+
+ggplot(spain, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/spain_vol.png')
+
+ggplot(trump, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/trump_vol.png')
+
+ggplot(usa, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/usa_vol.png')
+
+ggplot(whitehouse, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/whitehouse_vol.png')
+
+ggplot(who, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/who_vol.png')
+
+ggplot(fifa_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=fifa_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/soccer_orig_sent.png')
+
+ggplot(mlb_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=mlb_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/baseball_orig_sent.png')
+
+ggplot(nba_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nba_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/basketball_orig_sent.png')
+
+ggplot(boris_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=boris_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/boris_orig_sent.png')
+
+ggplot(cdc_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=cdc_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/cdc_orig_sent.png')
+
+ggplot(china_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=china_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/china_orig_sent.png')
+
+ggplot(congress_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=congress_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/congress_orig_sent.png')
+
+ggplot(eu_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=eu_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/eu_orig_sent.png')
+
+ggplot(fauci_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=fauci_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/fauci_orig_sent.png')
+
+ggplot(nfl_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nfl_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/football_orig_sent.png')
+
+ggplot(nhl_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nhl_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/hockey_orig_sent.png')
+
+ggplot(italy_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=italy_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/italy_orig_sent.png')
+
+ggplot(nhs_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nhs_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/nhs_orig_sent.png')
+
+ggplot(nyc_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=nyc_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/nyc_orig_sent.png')
+
+ggplot(obama_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=obama_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/obama_orig_sent.png')
+
+ggplot(pelosi_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=pelosi_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/pelosi_orig_sent.png')
+
+ggplot(spain_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=spain_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/spain_orig_sent.png')
+
+ggplot(trump_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=trump_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/trump_orig_sent.png')
+
+ggplot(usa_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=usa_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/usa_orig_sent.png')
+
+ggplot(whitehouse_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=whitehouse_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/whitehouse_orig_sent.png')
+
+ggplot(who_orig, aes(x=as.Date(created_at), y=sentiment) ) +
+  stat_density_2d(data=who_orig, aes(fill = ..level..), geom = "polygon")+
+  stat_summary(aes(x = week_set_day, y = sentiment), 
+               fun.x = function(y) length(y) / length(unique(y)), 
+               geom = "line", color='darkblue', size=1) +
+  scale_fill_distiller(palette=4, direction=1) +
+  labs(fill='Density of Tweets')+
+  ylim(-10, 10) +
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Sentiment Score')
+ggsave(file='twitter_sent_app/plots/who_orig_sent.png')
+
+ggplot(mlb_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/baseball_orig_vol.png')
+
+ggplot(nba_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/basketball_orig_vol.png')
+
+ggplot(boris_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/boris_orig_vol.png')
+
+ggplot(cdc_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/cdc_orig_vol.png')
+
+ggplot(china_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/china_orig_vol.png')
+
+ggplot(congress_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/congress_orig_vol.png')
+
+ggplot(eu_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/eu_orig_vol.png')
+
+ggplot(fauci_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/fauci_orig_vol.png')
+
+ggplot(nfl_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/football_orig_vol.png')
+
+ggplot(nhl_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/hockey_orig_vol.png')
+
+ggplot(italy_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/italy_orig_vol.png')
+
+ggplot(nhs_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/nhs_orig_vol.png')
+
+ggplot(nyc_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/nyc_orig_vol.png')
+
+ggplot(obama_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/obama_orig_vol.png')
+
+ggplot(pelosi_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/pelosi_orig_vol.png')
+
+ggplot(fifa_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/soccer_orig_vol.png')
+
+ggplot(spain_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/spain_orig_vol.png')
+
+ggplot(trump_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/trump_orig_vol.png')
+
+ggplot(usa_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/usa_orig_vol.png')
+
+ggplot(whitehouse_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/whitehouse_orig_vol.png')
+
+ggplot(who_orig, aes(x = week_set_day)) +
+  geom_bar(fill = 'darkgreen') +
+  labs(x='Week (2020)', y='Tweet Volume')+
+  scale_x_date(date_breaks = "1 week", date_labels = "%b-%d",
+               limits=as.Date(c("2020-01-06 00:00", "2020-05-01 00:00")))+
+  theme(axis.text.x=element_text(angle=90,hjust=1, size=12),
+        axis.text.y=element_text(size=12),
+        axis.title.x=element_text(size=16),
+        axis.title.y=element_text(size=16)) +
+  labs(x='Date of Tweet (2020)', y='Number of Tweets')
+ggsave(file='twitter_sent_app/plots/who_orig_vol.png')
+
